@@ -18,7 +18,7 @@ public class Day16_PositiveLogin {
         homePage.homeLoginButton.click();
         loginPage.username.sendKeys(ConfigReader.getProperty("app_customer_username"));
         loginPage.password.sendKeys(ConfigReader.getProperty("app_customer_password"));
-        loginPage.loginbutton.click();
+        loginPage.loginButton.click();
         ReusableMethods.verifyElementDisplayed(homePage.userID);
 Driver.closeDriver();
 

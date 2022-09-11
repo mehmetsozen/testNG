@@ -192,6 +192,18 @@ public class ReusableMethods {
         }
     }
     /**
+     * Verifies whether the element matching the provided WebElement is NOT displayed on page
+     * fails if the element matching the WebElement is not found or not displayed
+     * @paramWebElement
+     */
+    public static void verifyElementNotDisplayed(WebElement element) {
+        try {
+            assertFalse("Element should not be visible: " + element, element.isDisplayed());
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        }
+    }
+    /**
      * Verifies whether the element is displayed on page
      * fails if the element is not found or not displayed
      *
