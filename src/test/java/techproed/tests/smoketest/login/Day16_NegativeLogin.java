@@ -2,6 +2,7 @@ package techproed.tests.smoketest.login;
 
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.tests.smoketest.HomePage;
@@ -41,6 +42,7 @@ public class Day16_NegativeLogin {
         Assert.assertTrue(loginPage.invalidCredentialsError.getText().equals("invalid credentials"));
         ReusableMethods.getScreenshot("Error Message");
         Driver.closeDriver();
+
     }
 
     @Test

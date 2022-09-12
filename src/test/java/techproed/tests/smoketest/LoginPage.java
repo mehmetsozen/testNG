@@ -23,4 +23,10 @@ public class LoginPage {
     @FindBy(xpath = "//*[text()='email must be a valid email']")
     public WebElement invalidEmailError;
 
+    @FindBy(xpath = "(//*[@class='dropdown-item'])[3])")
+    public WebElement logoutLink;
+
+    @FindBy(xpath = "//*[@name='car']")
+    public WebElement selectACar;
+
 }

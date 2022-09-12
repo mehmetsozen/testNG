@@ -1,5 +1,6 @@
 package techproed.tests.smoketest.login;
 
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import techproed.tests.smoketest.HomePage;
 import techproed.tests.smoketest.LoginPage;
@@ -20,6 +21,8 @@ public class Day16_PositiveLogin {
         loginPage.password.sendKeys(ConfigReader.getProperty("app_customer_password"));
         loginPage.loginButton.click();
         ReusableMethods.verifyElementDisplayed(homePage.userID);
+        Select select=new Select(homePage.selectACar);
+        select.selectByIndex(3);
 Driver.closeDriver();
 
     }
