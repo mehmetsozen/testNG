@@ -37,7 +37,7 @@ public class Day17_DataProvider1 {
         return customerCredentials;
     }
     //    TEST METHOD
-    @Test(dataProvider = "customerData")
+    @Test(dataProvider = "customerData",groups="login group")
     public void dataProviderTest(String userName, String passWord){
         System.out.println("Username : "+userName+" ||| Password : "+passWord);
     }

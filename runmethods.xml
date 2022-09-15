@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Car Rental Suite" verbose="1" >
+    <test name="Smoke Test"   >
+        <classes>
+
+            <class name="techproed.tests.Day13_TestNGAnnotation">
+                <methods>
+                    <include name="test4" />
+                    <include name="test5" />
+                </methods>
+            </class>
+
+            <class name="techproed.tests.smoketest.login.Day16_NegativeLogin">
+                <methods>
+                    <exclude name="invalidEmail" />
+                </methods>
+            </class>
+
+
+
+        </classes>
+
+
+
+    </test>
+</suite>

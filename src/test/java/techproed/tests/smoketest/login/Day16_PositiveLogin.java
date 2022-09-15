@@ -11,7 +11,7 @@ import techproed.utilities.ReusableMethods;
 public class Day16_PositiveLogin {
     HomePage homePage;
     LoginPage loginPage;
-    @Test
+    @Test(groups="login-group")
     public void customerLogin(){
         Driver.getDriver().get(ConfigReader.getProperty("app_url"));
         homePage= new HomePage();
