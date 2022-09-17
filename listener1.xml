@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <!--    Connecting Listener Util class to teh test class
+    This automatically connects Listener to Test classes
+    This works only when we run from this xml file
+    This is the 2nd way of using listeners-->
+    <listeners>
+        <listener class-name="techproed.utilities.Listeners"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true"
+          name="/Users/techproed/IdeaProjects/mytestNGproject/src/test/java/techproed/tests/listeners/ListenersTest.java">
+        <classes>
+            <class name="techproed.tests.listeners.ListenersTest1">
+            </class>
+        </classes>
+    </test>
+</suite>

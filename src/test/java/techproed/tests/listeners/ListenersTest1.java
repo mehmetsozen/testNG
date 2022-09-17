@@ -2,12 +2,8 @@ package techproed.tests.listeners;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.SkipException;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-//Connecting this Test class and Listeners using @Listeners annotation
-//@Listeners(PATH OF THE LISTENERS CLASS)
-@Listeners(techproed.utilities.Listeners.class)
-public class ListenersTest {
+public class ListenersTest1 {
     @Test
     public void test1(){
         System.out.println("Test Case 1 -  PASS");
