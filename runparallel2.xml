@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Parallel Test 2" verbose="1" parallel="classes" thread-count="2" >
+    <test name="Smoke Test 2"   >
+        <classes>
+            <class name="techproed.tests.paralleltesting.Day18_SearchItem"> </class>
+        <class name="techproed.tests.paralleltesting.Day18_TechProEducation"></class>
+        </classes>
+    </test>
+</suite>

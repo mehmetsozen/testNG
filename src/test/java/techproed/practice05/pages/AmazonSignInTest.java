@@ -2,6 +2,7 @@ package techproed.practice05.pages;import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import techproed.pages.AmazonSignInPage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 
@@ -59,6 +60,7 @@ public class AmazonSignInTest {
 //        Verify the text "Create account"
         String createAccountText = amazonSignInPage.createAccountText.getText();
         Assert.assertEquals(createAccountText, "Create account");
+        Driver.closeDriver();
 
     }
 }

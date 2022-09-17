@@ -1,4 +1,4 @@
-package techproed.practice05.pages;
+package techproed.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +14,7 @@ public class SearchProductPage {
     }
 
     @FindBy(xpath = "//a[@href='/products']")
-    public WebElement productsButton;
+    public WebElement productButton;
 
     @FindBy(xpath = "//h2[@class='title text-center']")
     public  WebElement allProduct;
@@ -31,7 +31,7 @@ public class SearchProductPage {
     @FindBy(xpath = "//a[@href='/product_details/1']")
     public WebElement viewProduct;
 
-    @FindBy(xpath = "//b[.='Availability:']")
+    @FindBy(xpath = "")
     public WebElement availability;
 
     @FindBy(xpath = "//b[.='Condition:']")

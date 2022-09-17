@@ -5,8 +5,6 @@
         <classes>
 
             <class name="techproed.tests.dataprovider.Day17_DataProvider3"/>
-
-
             <class name="techproed.tests.Day13_TestNGAnnotation">
                 <methods>
                     <include name="test4" />

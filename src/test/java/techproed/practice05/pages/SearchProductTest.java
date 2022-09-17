@@ -1,8 +1,10 @@
 package techproed.practice05.pages;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import techproed.pages.SearchProductPage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
+import techproed.utilities.ReusableMethods;
 
 public class SearchProductTest {
 
@@ -16,41 +18,51 @@ public class SearchProductTest {
 //8. Verify all the product features related to search are visible
 
     SearchProductPage searchProductPage = new SearchProductPage();
+@Test
+    public void searchProduct() {
+//1.    Launch browser
+//2.    Navigate to url 'http://automationexercise.com'
+    Driver.getDriver().get(ConfigReader.getProperty("autoexercise"));
 
-    @Test
-    public void searchProductsTest() throws InterruptedException {
+    //3.    Verify that home page is visible successfully
+    String homePageTitle = Driver.getDriver().getTitle();
+    System.out.println(homePageTitle);
+    Assert.assertEquals("Automation Exercise", homePageTitle);
 
-//1. Launch browser
-//2. Navigate to url 'http://automationexercise.com'
-        Driver.getDriver().get(ConfigReader.getProperty("automation_exercise_url"));
+//4.    Click on 'Products' button
+    searchProductPage.productButton.click();
 
-//3. Verify that home page is visible successfully
-        String homePageUrl = Driver.getDriver().getCurrentUrl();
-        System.out.println(homePageUrl);
-        Assert.assertEquals(homePageUrl,"https://automationexercise.com/");
+    //5.    Verify user is navigated to ALL PRODUCTS page successfully
+    String allProducts = searchProductPage.allProduct.getText();
+    Assert.assertEquals(allProducts, "ALL PRODUCTS");
 
-//4. Click on 'Products' button
-        searchProductPage.productsButton.click();
+//6.    Enter product name in search input and click search button
+    searchProductPage.searchBox.sendKeys("Blue Top");
+    searchProductPage.searchButton.click();
 
-//5. Verify user is navigated to ALL PRODUCTS page successfully
-        boolean isAllProductDisplayed = searchProductPage.allProduct.isDisplayed();
-        Assert.assertTrue(isAllProductDisplayed);
+    //7.    Verify 'SEARCHED PRODUCTS' is visible
+    String searchedProducts = searchProductPage.searchedProductsText.getText();
+    System.out.println(searchedProducts);
+    Assert.assertEquals(searchedProducts, "Automation Exercise");
 
-//6. Enter product name in search input and click search button
-        searchProductPage.searchBox.sendKeys(ConfigReader.getProperty("product_name"));
-        searchProductPage.searchButton.click();
+//8.    View Product
+    searchProductPage.viewProduct.click();
 
+    //9.    Verify all the products' features related to search are visible
+    String availability = searchProductPage.availability.getText();
+    System.out.println(availability);
+    Assert.assertEquals(availability, "Availability:");
 
-//7. Verify 'SEARCHED PRODUCTS' is visible
-        boolean  isSearchedProductsTextDisplayed = searchProductPage.searchedProductsText.isDisplayed();
-        Assert.assertTrue(isSearchedProductsTextDisplayed);
+    String condition = searchProductPage.condition.getText();
+    System.out.println(condition);
+    Assert.assertEquals(condition, "Condition:");
 
-//8. Verify all the product features related to search are visible
-        Thread.sleep(2000);
-        searchProductPage.viewProduct.click();
-        Assert.assertTrue(searchProductPage.availability.getText().contains("In Stock"));
-        Assert.assertTrue(searchProductPage.condition.getText().contains("New"));
-        Assert.assertTrue(searchProductPage.brand.getText().contains("Polo"));
+    String brand = searchProductPage.brand.getText();
+    System.out.println(brand);
+    Assert.assertEquals(brand, "Brand:");
 
-    }
-}
+//10.   Close the page
+    ReusableMethods.waitFor(1);
+    Driver.closeDriver();
+
+}}
